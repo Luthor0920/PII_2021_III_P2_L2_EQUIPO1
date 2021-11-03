@@ -40,4 +40,9 @@ public class Campus {
     public void setFechaInicio(Date fechaInicio) {
         this.FechaInicio = fechaInicio;
     }
+
+    @Override
+    public String toString() {
+        return String.format("ID: %s \nNombre: %s \nDireccion: %s \nFecha Inicio: %s",getId(),getNombre(),getDireccion(),getFechaInicio(), "\n\n");
+    }
 }
