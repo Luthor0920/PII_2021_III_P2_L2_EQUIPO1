@@ -1,12 +1,9 @@
 package hn.edu.ujcv.objetos;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.Period;
-import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.Temporal;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Alumno extends Persona{
     private long cuenta;
@@ -38,5 +35,17 @@ public class Alumno extends Persona{
     public String toString() {
         return super.toString().concat("\nNumero de Cuenta: ").concat(String.valueOf(cuenta))
                 .concat("\n\n");
+    }
+
+    public void registrar(Scanner teclado) {
+        System.out.print("Ingrese el ID: ");
+        setId(teclado.nextLong());
+        System.out.print("Ingrese su Nombre: ");
+        setNombre(teclado.next());
+        System.out.print("Ingrese su fecha de nacimiento: (yyyy/MM/DD)");
+        Date fecha = new Date(teclado.next());
+        setFechaNacimiento(fecha);
+        System.out.print("Ingrese el Numero de Cuenta: ");
+        setCuenta(teclado.nextLong());
     }
 }
