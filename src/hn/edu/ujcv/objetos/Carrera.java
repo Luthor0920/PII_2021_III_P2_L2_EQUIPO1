@@ -22,4 +22,10 @@ public class Carrera {
     public void setNombre(String nombre) {
         this.Nombre = nombre;
     }
+
+    @Override
+    public String toString() {
+        return "ID: ".concat(String.valueOf(Id)).concat("\nNombre: ").concat(Nombre)
+                .concat("\n\n");
+    }
 }

@@ -41,4 +41,11 @@ public class Periodo {
     public void setFechaFinal(Date fechaFinal) {
         this.FechaFinal = fechaFinal;
     }
+
+    @Override
+    public String toString() {
+        return "ID: ".concat(String.valueOf(Id)).concat("\nDescripcion").concat(Descripcion)
+                .concat("\nFecha Inicio: ").concat(String.valueOf(FechaInicio))
+                .concat("\nFecha Fin: ").concat(String.valueOf(FechaFinal)).concat("\n\n");
+    }
 }

@@ -34,4 +34,8 @@ public abstract class Persona {
     }
     public abstract int CalcularEdad(Date FechaNacimiento);
 
+    public String toString() {
+        return "ID: ".concat(String.valueOf(Id)).concat("\nNombre: ").concat(Nombre)
+                .concat("\nFecha de Nacimiento: ").concat(String.valueOf(FechaNacimiento));
+    }
 }

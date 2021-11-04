@@ -139,7 +139,7 @@ public class Clase implements IClase{
         return String.format("Codigo: %s \nClase: %s \nUnidades valorativas: %s \nNota Acumulativa 1: %s " +
                 "\nNota Acumulativa 2: %s \nNota Acumulativa 3: %s \nNota Examen 1: %s \nNota Examen 2: %s" +
                 "\nNota Examen 3: %s \nNota Reposicion %s \nNota Final: %s",getId(),getNA1(),getUnidadesValorativas(),getNA1(),
-                getNA2(),getNA3(),getNE1(),getNE2(),getNE3(),getNE3(),String.valueOf(CalcularNotaFinal()));
+                getNA2(),getNA3(),getNE1(),getNE2(),getNE3(),getNE3(),String.valueOf(CalcularNotaFinal()),"\n\n");
     }
 
     @Override
