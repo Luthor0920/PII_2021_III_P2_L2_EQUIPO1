@@ -25,11 +25,11 @@ public class Ingenieria extends General{
     public double CalcularNotaFinal() {
         double notaProyecto;
         notaProyecto = (super.CalcularNotaFinal()*0.7) + (getNotaProyecto()*0.3);
-        return super.CalcularNotaFinal();
+        return notaProyecto;
     }
     @Override
     public String toString(){
-        return String.format("%s \nNota Proyecto: %s Nota final: %s", super.toString(),
+        return String.format("%s Nota Proyecto: %s Nota final: %s", super.toString(),getNotaProyecto(),
                 String.valueOf(CalcularNotaFinal()));
     }
 }

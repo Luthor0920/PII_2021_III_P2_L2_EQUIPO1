@@ -20,6 +20,6 @@ public class General extends Clase{
     }
     @Override
     public String toString(){
-        return String.format("%s aplica para Todas las carreras %s", super.toString(), isTodasCarreras());
+        return String.format("%s \nAplica para Todas las Carreras: %s \n", super.toString(), isTodasCarreras());
     }
 }

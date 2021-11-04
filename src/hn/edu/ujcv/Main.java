@@ -11,7 +11,6 @@ public class Main {
         Scanner teclado = new Scanner(System.in).useDelimiter("\n");
         String respuesta;
         int opcion;
-
         ListaAlumnos           listaAlumnos = new ListaAlumnos();
         ListaCampus             listaCampus = new ListaCampus();
         ListaCarreras         listaCarreras = new ListaCarreras();
@@ -55,13 +54,13 @@ public class Main {
                                      ListaClases listaClases, ListaHistoriales listaHistoriales, ListaPeriodos listaPeriodos) {
         int opcion;
         System.out.println("Elija una opcion.");
-        System.out.println("1 - Alumno" + "\n" +
-                "2 - Campus" + "\n" +
-                "3 - Carrera" + "\n" +
-                "4 - Catedratico" + "\n" +
-                "5 - Clase" + "\n" +
-                "6 - Historial" + "\n" +
-                "7 - Periodo");
+        System.out.println("1 - Alumno"+
+                "\n2 - Campus"+
+                "\n3 - Carrera"+
+                "\n4 - Catedratico"+
+                "\n5 - Clase"+
+                "\n6 - Historial"+
+                "\n7 - Periodo");
         opcion = teclado.nextInt();
         switch (opcion) {
             case 1:
@@ -85,8 +84,12 @@ public class Main {
                 listaCatedraticos.addCatedratico(catedratico);
                 break;
             case 5:
+                Clase clase = new Clase();
+                clase.registrar(teclado);
+                listaClases.addClase(clase);
                 break;
             case 6:
+
                 break;
             case 7:
                 Periodo periodo = new Periodo();
@@ -101,16 +104,17 @@ public class Main {
 
     public static void visualizarMenu(Scanner teclado, ListaAlumnos listaAlumnos, ListaCampus listaCampus,
                                       ListaCarreras listaCarreras, ListaCatedraticos listaCatedraticos,
-                                      ListaClases listaClases, ListaHistoriales listaHistoriales, ListaPeriodos listaPeriodos) {
+                                      ListaClases listaClases, ListaHistoriales listaHistoriales,
+                                      ListaPeriodos listaPeriodos) {
         int opcion;
         System.out.println("Elija una opcion.");
-        System.out.println("1 - Lista de Alumnos" + "\n" +
-                "2 - Lista de Campus" + "\n" +
-                "3 - Lista de Carreras" + "\n" +
-                "4 - Lista de Catedraticos" + "\n" +
-                "5 - Lista de Clases" + "\n" +
-                "6 - Lista de Historiales" + "\n" +
-                "7 - Lista de Periodos");
+        System.out.println("1 - Lista de Alumnos"+
+                "\n2 - Lista de Campus"+
+                "\n3 - Lista de Carreras"+
+                "\n4 - Lista de Catedraticos"+
+                "\n5 - Lista de Clases"+
+                "\n6 - Lista de Historiales"+
+                "\n7 - Lista de Periodos");
         opcion = teclado.nextInt();
         switch (opcion) {
             case 1:
@@ -121,22 +125,46 @@ public class Main {
                 }
                 break;
             case 2:
-                System.out.println(listaCampus.imprimirLista());
+                if (listaCampus == null) {
+                    System.out.println("La lista esta vacia.");
+                } else {
+                    System.out.println(listaCampus.imprimirLista());
+                }
                 break;
             case 3:
-                System.out.println(listaCarreras.imprimirLista());
+                if (listaCarreras == null) {
+                    System.out.println("La lista esta vacia.");
+                } else {
+                    System.out.println(listaCarreras.imprimirLista());
+                }
                 break;
             case 4:
-                System.out.println(listaCatedraticos.imprimirLista());
+                if (listaCatedraticos == null) {
+                    System.out.println("La lista esta vacia.");
+                } else {
+                    System.out.println(listaCatedraticos.imprimirLista());
+                }
                 break;
             case 5:
-                System.out.println(listaClases.imprimirLista());
+                if (listaClases == null) {
+                    System.out.println("La lista esta vacia.");
+                } else {
+                    System.out.println(listaClases.imprimirLista());
+                }
                 break;
             case 6:
-                System.out.println(listaHistoriales.imprimirLista());
+                if (listaHistoriales == null) {
+                    System.out.println("La lista esta vacia.");
+                } else {
+                    System.out.println(listaHistoriales.imprimirLista());
+                }
                 break;
             case 7:
-                System.out.println(listaPeriodos.imprimirLista());
+                if (listaPeriodos == null) {
+                    System.out.println("La lista esta vacia.");
+                } else {
+                    System.out.println(listaPeriodos.imprimirLista());
+                }
                 break;
             default:
                 System.out.println("Opcion invalida.");

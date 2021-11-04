@@ -18,11 +18,14 @@ public class Idioma extends General {
 
     @Override
     public double CalcularNotaFinal() {
-        return super.CalcularNotaFinal() + this.NotaLaboratorio*0.15;
+        double notaLaboratorio;
+        notaLaboratorio = (super.CalcularNotaFinal()*0.7) + (getNotaLaboratorio()*0.3);
+        return notaLaboratorio;
     }
 
     @Override
     public String toString() {
-        return super.toString().concat("\nNota Laboratorio: ").concat(String.valueOf(NotaLaboratorio));
+        return super.toString().concat("Nota Laboratorio: ").concat(String.valueOf(NotaLaboratorio)).concat(" Nota Final: ")
+                .concat(String.valueOf(CalcularNotaFinal()));
     }
 }
