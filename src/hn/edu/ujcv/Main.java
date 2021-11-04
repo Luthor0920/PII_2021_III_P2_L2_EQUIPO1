@@ -90,6 +90,9 @@ public class Main {
                 break;
             case 6:
 
+                Historial historial = new Historial();
+                historial.registrar(teclado);
+                listaHistoriales.addHistorial(historial);
                 break;
             case 7:
                 Periodo periodo = new Periodo();

@@ -10,7 +10,7 @@ public class ListaHistoriales {
         this.ListaHistoriales = new ArrayList<>();
     }
 
-    public void addPeriodo(Historial historial) {
+    public void addHistorial(Historial historial) {
         this.ListaHistoriales.add(historial);
     }
     public double calcularPromedioGlobal() {
