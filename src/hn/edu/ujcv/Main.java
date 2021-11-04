@@ -90,8 +90,7 @@ public class Main {
             case 6:
                 Historial historial = new Historial();
                 historial.registrar(teclado, listaAlumnos, listaCampus, listaCarreras,
-                        listaPeriodos,listaClases);
-                listaHistoriales.addHistorial(historial);
+                        listaPeriodos,listaClases, listaHistoriales);
                 break;
             case 7:
                 Periodo periodo = new Periodo();

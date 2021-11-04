@@ -78,7 +78,8 @@ public class Historial implements IHistorial {
     }
 
     public void registrar(Scanner teclado, ListaAlumnos alumnos, ListaCampus campus,
-                          ListaCarreras carreras, ListaPeriodos periodos, ListaClases clases) {
+                          ListaCarreras carreras, ListaPeriodos periodos, ListaClases clases,
+                          ListaHistoriales historiales) {
         String respuesta;
 
         if (alumnos.validar() == true) {
@@ -112,6 +113,8 @@ public class Historial implements IHistorial {
                 System.out.print("Desea agregar otra clase? S/N ");
                 respuesta = teclado.next();
             } while (respuesta.equalsIgnoreCase("s"));
+
+            historiales.addHistorial(this);
         }
     }
 }
