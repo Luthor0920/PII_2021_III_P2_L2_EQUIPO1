@@ -25,7 +25,7 @@ public class Idioma extends General {
 
     @Override
     public String toString() {
-        return super.toString().concat("Nota Laboratorio: ").concat(String.valueOf(NotaLaboratorio)).concat(" Nota Final: ")
+        return super.toString().concat("\nNota Laboratorio: ").concat(String.valueOf(NotaLaboratorio)).concat(" Nota Final: ")
                 .concat(String.valueOf(CalcularNotaFinal()));
     }
 }

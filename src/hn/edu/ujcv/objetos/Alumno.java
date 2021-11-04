@@ -23,6 +23,7 @@ public class Alumno extends Persona{
         this.cuenta = cuenta;
     }
 
+
     @Override
     public int CalcularEdad(Date FechaNacimiento) {
         LocalDate actual = LocalDate.now();
@@ -42,10 +43,21 @@ public class Alumno extends Persona{
         setId(teclado.nextLong());
         System.out.print("Ingrese su Nombre: ");
         setNombre(teclado.next());
-        System.out.print("Ingrese su fecha de nacimiento: (yyyy/MM/DD)");
+        System.out.print("Ingrese su fecha de nacimiento (yyyy/MM/DD): ");
         Date fecha = new Date(teclado.next());
         setFechaNacimiento(fecha);
         System.out.print("Ingrese el Numero de Cuenta: ");
         setCuenta(teclado.nextLong());
+    }
+
+    public void buscar(Scanner teclado, ListaAlumnos alumnos) {
+        boolean acertado;
+
+        do {
+            acertado=false;
+
+
+
+        } while (acertado==false);
     }
 }

@@ -64,9 +64,9 @@ public class Historial implements IHistorial {
     }
     @Override
     public String toString() {
-        return "Alumno: ".concat(getAlumno().toString()).concat("\nCampus: ").concat(getCampus().getNombre())
+        return "Alumno: ".concat(getAlumno().getNombre()).concat("\nCampus: ").concat(getCampus().getNombre())
                 .concat("\nCarrera: ").concat(getCarrera().getNombre()).concat("\nPeriodo: ").concat(getPeriodo().getDescripcion())
-                .concat("Clases: ").concat(imprimirClases()).concat("\n\n");
+                .concat("\nClases: ").concat(imprimirClases()).concat("\n");
     }
 
     public String imprimirClases() {
@@ -76,7 +76,42 @@ public class Historial implements IHistorial {
         }
         return listado.toString();
     }
-    public void registrar(Scanner teclado) {
 
+    public void registrar(Scanner teclado, ListaAlumnos alumnos, ListaCampus campus,
+                          ListaCarreras carreras, ListaPeriodos periodos, ListaClases clases) {
+        String respuesta;
+
+        if (alumnos.validar() == true) {
+            System.out.println("No puede registrar Historial.");
+            System.out.println("No hay alumnos registrados.");
+        }
+        else if (campus.validar() == true) {
+            System.out.println("No puede registrar Historial.");
+            System.out.println("No hay campus registrados.");
+        }
+        else if (carreras.validar() == true) {
+            System.out.println("No puede registrar Historial.");
+            System.out.println("No hay carreras registradas.");
+        }
+        else if (periodos.validar() == true) {
+            System.out.println("No puede registrar Historial.");
+            System.out.println("No hay periodos registrados.");
+        }
+        else if (clases.validar() == true) {
+            System.out.println("No puede registrar Historial.");
+            System.out.println("No hay clases registradas.");
+        }
+        else {
+            alumnos.buscarAlumno(teclado, this);
+            campus.buscarCampus(teclado, this);
+            carreras.buscarCarrera(teclado, this);
+            periodos.buscarPeriodo(teclado, this);
+            do {
+                clases.buscarClases(teclado, this);
+
+                System.out.print("Desea agregar otra clase? S/N ");
+                respuesta = teclado.next();
+            } while (respuesta.equalsIgnoreCase("s"));
+        }
     }
 }

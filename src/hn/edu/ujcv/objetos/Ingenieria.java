@@ -29,7 +29,7 @@ public class Ingenieria extends General{
     }
     @Override
     public String toString(){
-        return String.format("%s Nota Proyecto: %s Nota final: %s", super.toString(),getNotaProyecto(),
+        return String.format("%s \nNota Proyecto: %s Nota final: %s", super.toString(),getNotaProyecto(),
                 String.valueOf(CalcularNotaFinal()));
     }
 }

@@ -19,12 +19,6 @@ public class Main {
         ListaHistoriales   listaHistoriales = new ListaHistoriales();
         ListaPeriodos         listaPeriodos = new ListaPeriodos();
 
-        //Ingenieria clase = new Ingenieria(1, "Progra",5,89,90,97,85,100,89,0,false,100);
-        //Avanzada clase = new Avanzada(1, "Progra",5,89,90,97,85,100,89,0,65);
-        Idioma clase = new Idioma(1, "Progra",5,89,90,97,85,100,89,0,false,100);
-        listaClases.addClase(clase);
-        System.out.println(listaClases.imprimirLista());
-
         try {
             do {
                 System.out.println("Elija una opcion.");
@@ -94,9 +88,9 @@ public class Main {
                 clase.registrar(teclado, listaClases);
                 break;
             case 6:
-
                 Historial historial = new Historial();
-                historial.registrar(teclado);
+                historial.registrar(teclado, listaAlumnos, listaCampus, listaCarreras,
+                        listaPeriodos,listaClases);
                 listaHistoriales.addHistorial(historial);
                 break;
             case 7:
@@ -126,53 +120,25 @@ public class Main {
         opcion = teclado.nextInt();
         switch (opcion) {
             case 1:
-                if (listaAlumnos == null) {
-                    System.out.println("La lista esta vacia.");
-                } else {
-                    System.out.println(listaAlumnos.imprimirLista());
-                }
+                System.out.println(listaAlumnos.imprimirLista());
                 break;
             case 2:
-                if (listaCampus == null) {
-                    System.out.println("La lista esta vacia.");
-                } else {
-                    System.out.println(listaCampus.imprimirLista());
-                }
+                System.out.println(listaCampus.imprimirLista());
                 break;
             case 3:
-                if (listaCarreras == null) {
-                    System.out.println("La lista esta vacia.");
-                } else {
-                    System.out.println(listaCarreras.imprimirLista());
-                }
+                System.out.println(listaCarreras.imprimirLista());
                 break;
             case 4:
-                if (listaCatedraticos == null) {
-                    System.out.println("La lista esta vacia.");
-                } else {
-                    System.out.println(listaCatedraticos.imprimirLista());
-                }
+                System.out.println(listaCatedraticos.imprimirLista());
                 break;
             case 5:
-                if (listaClases == null) {
-                    System.out.println("La lista esta vacia.");
-                } else {
-                    System.out.println(listaClases.imprimirLista());
-                }
+                System.out.println(listaClases.imprimirLista());
                 break;
             case 6:
-                if (listaHistoriales == null) {
-                    System.out.println("La lista esta vacia.");
-                } else {
-                    System.out.println(listaHistoriales.imprimirLista());
-                }
+                System.out.println(listaHistoriales.imprimirLista());
                 break;
             case 7:
-                if (listaPeriodos == null) {
-                    System.out.println("La lista esta vacia.");
-                } else {
-                    System.out.println(listaPeriodos.imprimirLista());
-                }
+                System.out.println(listaPeriodos.imprimirLista());
                 break;
             default:
                 System.out.println("Opcion invalida.");

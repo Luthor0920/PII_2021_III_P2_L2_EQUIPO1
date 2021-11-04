@@ -24,10 +24,15 @@ public class ListaHistoriales {
     }
 
     public String imprimirLista() {
-        StringBuilder listado = new StringBuilder();
-        for (Historial item: this.ListaHistoriales) {
-            listado.append(item.toString());
+        if (ListaHistoriales.isEmpty()) {
+            return "La lista esta vacia.";
         }
-        return listado.toString();
+        else {
+            StringBuilder listado = new StringBuilder();
+            for (Historial item : this.ListaHistoriales) {
+                listado.append(item.toString());
+            }
+            return listado.toString();
+        }
     }
 }

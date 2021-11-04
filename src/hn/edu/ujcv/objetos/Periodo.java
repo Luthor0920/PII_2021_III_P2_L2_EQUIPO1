@@ -45,7 +45,7 @@ public class Periodo {
 
     @Override
     public String toString() {
-        return "ID: ".concat(String.valueOf(Id)).concat("\nDescripcion").concat(Descripcion)
+        return "ID: ".concat(String.valueOf(Id)).concat("\nDescripcion: ").concat(Descripcion)
                 .concat("\nFecha Inicio: ").concat(String.valueOf(FechaInicio))
                 .concat("\nFecha Fin: ").concat(String.valueOf(FechaFinal)).concat("\n\n");
     }

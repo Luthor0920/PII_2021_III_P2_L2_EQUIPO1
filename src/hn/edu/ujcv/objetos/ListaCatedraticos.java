@@ -13,10 +13,15 @@ public class ListaCatedraticos {
         this.ListaCatedraticos.add(catedratico);
     }
     public String imprimirLista() {
-        StringBuilder listado = new StringBuilder();
-        for (Catedratico item: this.ListaCatedraticos) {
+        if (ListaCatedraticos.isEmpty()) {
+            return "La lista esta vacia.";
+        }
+        else {
+            StringBuilder listado = new StringBuilder();
+        for (Catedratico item : this.ListaCatedraticos) {
             listado.append(item.toString());
         }
         return listado.toString();
+    }
     }
 }
