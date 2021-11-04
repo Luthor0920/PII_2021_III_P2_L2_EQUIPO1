@@ -1,5 +1,7 @@
 package hn.edu.ujcv.objetos;
 
+import java.util.Scanner;
+
 public class Clase implements IClase{
     private int Id;
     private String Nombre;
@@ -156,5 +158,28 @@ public class Clase implements IClase{
         notaFinal = (NA1+NA2+NA3) + (NE1+NE2+NE3+NR);
 
         return notaFinal;
+    }
+
+    public void registrar(Scanner teclado) {
+        System.out.print("Ingrese el ID: ");
+        setId(teclado.nextInt());
+        System.out.print("Ingrese el Nombre: ");
+        setNombre(teclado.next());
+        System.out.print("Ingrese las Unidades Valorativas: ");
+        setUnidadesValorativas(teclado.nextInt());
+        System.out.print("Ingrese la Nota de Acumulativo 1: ");
+        setNA1(teclado.nextInt());
+        System.out.print("Ingrese la Nota de Examen 1: ");
+        setNE1(teclado.nextInt());
+        System.out.print("Ingrese la Nota de Acumulativo 2: ");
+        setNA2(teclado.nextInt());
+        System.out.print("Ingrese la Nota de Examen 2: ");
+        setNE2(teclado.nextInt());
+        System.out.print("Ingrese la Nota de Acumulativo 3: ");
+        setNA3(teclado.nextInt());
+        System.out.print("Ingrese la Nota de Examen 3: ");
+        setNE3(teclado.nextInt());
+        System.out.print("Ingrese la Nota de Examen Reposicion: ");
+        setNR(teclado.nextInt());
     }
 }

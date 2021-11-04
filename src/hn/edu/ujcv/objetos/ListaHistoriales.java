@@ -1,6 +1,7 @@
 package hn.edu.ujcv.objetos;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ListaHistoriales {
     private ArrayList<Historial> ListaHistoriales;
@@ -14,9 +15,10 @@ public class ListaHistoriales {
     }
     public double calcularPromedioGlobal() {
         double promedio=0, contador=0;
-        for (Historial item: this.ListaHistoriales) {
+        Iterator<Historial> historialIterator = ListaHistoriales.iterator();
+        while (historialIterator.hasNext()) {
             contador++;
-            promedio += item.CalcularPromedio();
+            promedio += historialIterator.next().CalcularPromedio();
         }
         return promedio/contador;
     }
