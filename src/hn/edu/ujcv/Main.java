@@ -19,6 +19,12 @@ public class Main {
         ListaHistoriales   listaHistoriales = new ListaHistoriales();
         ListaPeriodos         listaPeriodos = new ListaPeriodos();
 
+        //Ingenieria clase = new Ingenieria(1, "Progra",5,89,90,97,85,100,89,0,false,100);
+        //Avanzada clase = new Avanzada(1, "Progra",5,89,90,97,85,100,89,0,65);
+        Idioma clase = new Idioma(1, "Progra",5,89,90,97,85,100,89,0,false,100);
+        listaClases.addClase(clase);
+        System.out.println(listaClases.imprimirLista());
+
         try {
             do {
                 System.out.println("Elija una opcion.");
@@ -85,8 +91,7 @@ public class Main {
                 break;
             case 5:
                 Clase clase = new Clase();
-                clase.registrar(teclado);
-                listaClases.addClase(clase);
+                clase.registrar(teclado, listaClases);
                 break;
             case 6:
 
