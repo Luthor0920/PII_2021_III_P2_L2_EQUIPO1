@@ -1,6 +1,7 @@
 package hn.edu.ujcv.objetos;
 
 import java.util.Date;
+import java.util.Scanner;
 
 public class Campus {
     private int Id;
@@ -44,5 +45,17 @@ public class Campus {
     @Override
     public String toString() {
         return String.format("ID: %s \nNombre: %s \nDireccion: %s \nFecha Inicio: %s",getId(),getNombre(),getDireccion(),getFechaInicio(), "\n\n");
+    }
+
+    public void registrar(Scanner teclado) {
+        System.out.print("Ingrese el ID: ");
+        setId(teclado.nextInt());
+        System.out.print("Ingrese el Nombre: ");
+        setNombre(teclado.next());
+        System.out.print("Ingrese la Direccion: ");
+        setDireccion(teclado.next());
+        System.out.print("Ingrese la Fecha de Inicio (yyyy/MM/DD): ");
+        Date fecha = new Date(teclado.next());
+        setFechaInicio(fecha);
     }
 }

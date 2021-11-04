@@ -55,13 +55,13 @@ public class Main {
                                      ListaClases listaClases, ListaHistoriales listaHistoriales, ListaPeriodos listaPeriodos) {
         int opcion;
         System.out.println("Elija una opcion.");
-        System.out.println("1 - Lista de Alumnos" + "\n" +
-                "2 - Lista de Campus" + "\n" +
-                "3 - Lista de Carreras" + "\n" +
-                "4 - Lista de Catedraticos" + "\n" +
-                "5 - Lista de Clases" + "\n" +
-                "6 - Lista de Historiales" + "\n" +
-                "7 - Lista de Periodos");
+        System.out.println("1 - Alumno" + "\n" +
+                "2 - Campus" + "\n" +
+                "3 - Carrera" + "\n" +
+                "4 - Catedratico" + "\n" +
+                "5 - Clase" + "\n" +
+                "6 - Historial" + "\n" +
+                "7 - Periodo");
         opcion = teclado.nextInt();
         switch (opcion) {
             case 1:
@@ -70,16 +70,28 @@ public class Main {
                 listaAlumnos.addAlumno(alumno);
                 break;
             case 2:
+                Campus campus = new Campus();
+                campus.registrar(teclado);
+                listaCampus.addCampus(campus);
                 break;
             case 3:
+                Carrera carrera = new Carrera();
+                carrera.registrar(teclado);
+                listaCarreras.addCarrera(carrera);
                 break;
             case 4:
+                Catedratico catedratico = new Catedratico();
+                catedratico.registrar(teclado);
+                listaCatedraticos.addCatedratico(catedratico);
                 break;
             case 5:
                 break;
             case 6:
                 break;
             case 7:
+                Periodo periodo = new Periodo();
+                periodo.registrar(teclado);
+                listaPeriodos.addPeriodo(periodo);
                 break;
             default:
                 System.out.println("Opcion invalida.");
@@ -92,13 +104,13 @@ public class Main {
                                       ListaClases listaClases, ListaHistoriales listaHistoriales, ListaPeriodos listaPeriodos) {
         int opcion;
         System.out.println("Elija una opcion.");
-        System.out.println("1 - Alumno" + "\n" +
-                "2 - Campus" + "\n" +
-                "3 - Carrera" + "\n" +
-                "4 - Catedratico" + "\n" +
-                "5 - Clase" + "\n" +
-                "6 - Historial" + "\n" +
-                "7 - Periodo");
+        System.out.println("1 - Lista de Alumnos" + "\n" +
+                "2 - Lista de Campus" + "\n" +
+                "3 - Lista de Carreras" + "\n" +
+                "4 - Lista de Catedraticos" + "\n" +
+                "5 - Lista de Clases" + "\n" +
+                "6 - Lista de Historiales" + "\n" +
+                "7 - Lista de Periodos");
         opcion = teclado.nextInt();
         switch (opcion) {
             case 1:

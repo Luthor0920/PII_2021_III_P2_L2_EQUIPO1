@@ -1,6 +1,7 @@
 package hn.edu.ujcv.objetos;
 
 import java.util.Date;
+import java.util.Scanner;
 
 public class Catedratico extends Persona{
     private int Codigo;
@@ -29,4 +30,16 @@ public class Catedratico extends Persona{
         return super.toString().concat("\nCodigo: ").concat(String.valueOf(Codigo))
                 .concat("\n\n");
     }
-}
+
+    public void registrar(Scanner teclado) {
+        System.out.print("Ingrese el ID: ");
+        setId(teclado.nextInt());
+        System.out.print("Ingrese el Nombre: ");
+        setNombre(teclado.next());
+        System.out.print("Ingrese la Fecha de Nacimiento (yyyy/MM/DD): ");
+        Date fecha = new Date(teclado.next());
+        setFechaNacimiento(fecha);
+        System.out.print("Ingrese el Codigo: ");
+        setCodigo(teclado.nextInt());
+    }
+ }
