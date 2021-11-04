@@ -160,7 +160,7 @@ public class Clase implements IClase{
         return notaFinal;
     }
 
-    public void registrar(Scanner teclado) {
+    public void registrar(Scanner teclado, ListaClases clases) {
         System.out.print("Ingrese el ID: ");
         setId(teclado.nextInt());
         System.out.print("Ingrese el Nombre: ");
@@ -181,5 +181,51 @@ public class Clase implements IClase{
         setNE3(teclado.nextInt());
         System.out.print("Ingrese la Nota de Examen Reposicion: ");
         setNR(teclado.nextInt());
+
+        boolean aceptado;
+        do {
+            aceptado = false;
+            System.out.println("\nElija una opcion (Tipo de Clase)");
+            System.out.println("1 - Avanzada");
+            System.out.println("2 - General");
+            System.out.println("3 - Ingenieria");
+            System.out.println("4 - Idioma");
+            int opcion = teclado.nextInt();
+
+            if (opcion==1) {
+                aceptado=true;
+                System.out.print("Ingrese el Valor de Vinculacion: ");
+                int valorVinculacion = teclado.nextInt();
+                Avanzada clase = new Avanzada(getId(), getNombre(), getUnidadesValorativas(), getNA1(), getNE1(),
+                        getNA2(), getNE2(), getNA3(), getNE3(), getNR(), valorVinculacion);
+                clases.addClase(clase);
+            }
+            else if(opcion==2) {
+                aceptado=true;
+                General claseA = new General(getId(), getNombre(), getUnidadesValorativas(), getNA1(), getNE1(),
+                        getNA2(), getNE2(), getNA3(), getNE3(), getNR(), true);
+                clases.addClase(claseA);
+            }
+            else if (opcion==3) {
+                aceptado=true;
+                System.out.print("Ingrese la Nota del Proyecto: ");
+                int nota = teclado.nextInt();
+                Ingenieria claseIng = new Ingenieria(getId(), getNombre(), getUnidadesValorativas(), getNA1(), getNA2(),
+                        getNA3(), getNE1(), getNE2(), getNE3(), getNR(), false, nota);
+                clases.addClase(claseIng);
+            }
+            else if (opcion==4) {
+                aceptado=true;
+                System.out.print("Ingrese la Nota del Laboratorio: ");
+                int nota_ = teclado.nextInt();
+                Idioma claseI = new Idioma(getId(),getNombre(),getUnidadesValorativas(),getNA1(),getNE1(),getNA2(),
+                        getNE2(),getNA3(),getNE3(),getNR(),true,nota_);
+                clases.addClase(claseI);
+            }
+            else {
+                System.out.println("Opcion invalida.");
+            }
+
+        } while (aceptado==false);
     }
 }
