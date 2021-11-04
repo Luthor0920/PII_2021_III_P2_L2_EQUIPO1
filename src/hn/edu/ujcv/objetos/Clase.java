@@ -13,8 +13,13 @@ public class Clase implements IClase{
     private int NE2;
     private int NE3;
     private int NR;
+    static final double VP1_2 = 0.15;
+    static final double VP3 = 0.20;
+    static int contador=1;
 
-    public Clase(){}
+    public Clase(){
+        Id = ++contador;
+    }
 
     public Clase(int pId, String pNombre, int pUnidadesValorativas, int pNA1, int pNA2, int pNA3
             ,int pNE1, int pNE2, int pNE3, int pNR){
@@ -147,13 +152,13 @@ public class Clase implements IClase{
     @Override
     public double CalcularNotaFinal() {
         double notaFinal;
-        double NA1 = getNA1()*0.15;
-        double NA2 = getNA2()*0.15;
-        double NA3 = getNA3()*0.20;
-        double NE1 = getNE1()*0.15;
-        double NE2 = getNE2()*0.15;
-        double NE3 = getNE3()*0.20;
-        double NR  = getNR()*0.15;
+        double NA1 = getNA1()*VP1_2;
+        double NA2 = getNA2()*VP1_2;
+        double NA3 = getNA3()*VP3;
+        double NE1 = getNE1()*VP1_2;
+        double NE2 = getNE2()*VP1_2;
+        double NE3 = getNE3()*VP3;
+        double NR  = getNR()*VP1_2;
 
         notaFinal = (NA1+NA2+NA3) + (NE1+NE2+NE3+NR);
 
@@ -227,5 +232,9 @@ public class Clase implements IClase{
             }
 
         } while (aceptado==false);
+    }
+
+    public static int numeroClases() {
+        return contador;
     }
 }

@@ -18,7 +18,7 @@ public class Main {
         ListaClases             listaClases = new ListaClases();
         ListaHistoriales   listaHistoriales = new ListaHistoriales();
         ListaPeriodos         listaPeriodos = new ListaPeriodos();
-
+        Clase                         clase = new Clase();
         try {
             do {
                 System.out.println("Elija una opcion.");
@@ -29,11 +29,11 @@ public class Main {
                 switch (opcion) {
                     case 1:
                         registrarMenu(teclado, listaAlumnos, listaCampus, listaCarreras, listaCatedraticos, listaClases,
-                                listaHistoriales, listaPeriodos);
+                                listaHistoriales, listaPeriodos, clase);
                         break;
                     case 2:
                         visualizarMenu(teclado, listaAlumnos, listaCampus, listaCarreras, listaCatedraticos, listaClases,
-                                listaHistoriales, listaPeriodos);
+                                listaHistoriales, listaPeriodos, clase);
                         break;
                     default:
                         System.out.println("Opcion invalida.");
@@ -51,7 +51,8 @@ public class Main {
 
     public static void registrarMenu(Scanner teclado, ListaAlumnos listaAlumnos, ListaCampus listaCampus,
                                      ListaCarreras listaCarreras, ListaCatedraticos listaCatedraticos,
-                                     ListaClases listaClases, ListaHistoriales listaHistoriales, ListaPeriodos listaPeriodos) {
+                                     ListaClases listaClases, ListaHistoriales listaHistoriales, ListaPeriodos listaPeriodos,
+                                     Clase clase) {
         int opcion;
         System.out.println("Elija una opcion.");
         System.out.println("1 - Alumno"+
@@ -84,7 +85,6 @@ public class Main {
                 listaCatedraticos.addCatedratico(catedratico);
                 break;
             case 5:
-                Clase clase = new Clase();
                 clase.registrar(teclado, listaClases);
                 break;
             case 6:
@@ -106,7 +106,7 @@ public class Main {
     public static void visualizarMenu(Scanner teclado, ListaAlumnos listaAlumnos, ListaCampus listaCampus,
                                       ListaCarreras listaCarreras, ListaCatedraticos listaCatedraticos,
                                       ListaClases listaClases, ListaHistoriales listaHistoriales,
-                                      ListaPeriodos listaPeriodos) {
+                                      ListaPeriodos listaPeriodos, Clase clase) {
         int opcion;
         System.out.println("Elija una opcion.");
         System.out.println("1 - Lista de Alumnos"+
@@ -132,6 +132,7 @@ public class Main {
                 break;
             case 5:
                 System.out.println(listaClases.imprimirLista());
+                listaClases.imprimirArreglo(clase);
                 break;
             case 6:
                 System.out.println(listaHistoriales.imprimirLista());

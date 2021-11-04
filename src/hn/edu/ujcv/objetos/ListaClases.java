@@ -40,7 +40,6 @@ public class ListaClases {
     public void buscarClases(Scanner teclado, Historial historial) {
         ArrayList<Clase> clases = new ArrayList<>();
         boolean acertado;
-        String respuesta;
 
         do {
             acertado = false;
@@ -64,5 +63,17 @@ public class ListaClases {
     public boolean validar() {
         boolean vacio = ListaClases.isEmpty();
         return vacio;
+    }
+
+    public void imprimirArreglo(Clase clase) {
+        Clase[] clases = new Clase[clase.numeroClases()];
+        int j=0;
+        for (Clase clase_: ListaClases) {
+            clases[j]=clase_;
+            j++;
+        }
+        for (int i = 0; i < clases.length; i++) {
+            System.out.printf("La clase %s es un %s%n",i,clases[i].getClass().getName());
+        }
     }
 }
