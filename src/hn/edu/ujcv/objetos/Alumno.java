@@ -36,7 +36,7 @@ public class Alumno extends Persona{
         return super.toString().concat("\nNumero de Cuenta: ").concat(String.valueOf(cuenta))
                 .concat("\n\n");
     }
-
+    @Override
     public void registrar(Scanner teclado) {
         System.out.print("Ingrese el ID: ");
         setId(teclado.nextLong());

@@ -1,6 +1,7 @@
 package hn.edu.ujcv.objetos;
 
 import java.util.Date;
+import java.util.Scanner;
 
 public abstract class Persona {
     protected long Id;
@@ -38,4 +39,5 @@ public abstract class Persona {
         return "ID: ".concat(String.valueOf(Id)).concat("\nNombre: ").concat(Nombre)
                 .concat("\nFecha de Nacimiento: ").concat(String.valueOf(FechaNacimiento));
     }
+    public abstract void registrar(Scanner teclado);
 }

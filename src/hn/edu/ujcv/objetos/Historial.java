@@ -1,6 +1,7 @@
 package hn.edu.ujcv.objetos;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Historial implements IHistorial {
     private Alumno Alumno;
@@ -12,11 +13,11 @@ public class Historial implements IHistorial {
     public Historial() {}
     public Historial(Alumno pAlumno, Campus pCampus, Carrera pCarrera,
                      Periodo pPeriodo, ArrayList<Clase> pClases) {
-        this.Alumno = pAlumno;
-        this.Campus = pCampus;
+        this.Alumno  = pAlumno;
+        this.Campus  = pCampus;
         this.Carrera = pCarrera;
         this.Periodo = pPeriodo;
-        this.Clases = pClases;
+        this.Clases  = pClases;
     }
 
     public Alumno getAlumno() {
@@ -74,5 +75,8 @@ public class Historial implements IHistorial {
             listado.append(item.getNombre());
         }
         return listado.toString();
+    }
+    public void registrar(Scanner teclado) {
+
     }
 }
