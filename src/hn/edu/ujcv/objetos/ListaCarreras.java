@@ -28,6 +28,9 @@ public class ListaCarreras {
 
     public void buscarCarrera(Scanner teclado, Historial historial) {
         boolean acertado;
+        System.out.println("--- Lista Carreras ---");
+        System.out.println(imprimirLista());
+
         do {
             acertado = false;
             System.out.print("Ingrese ID de Carrera: ");
@@ -36,7 +39,7 @@ public class ListaCarreras {
             for (Carrera carrera : ListaCarreras) {
                 if (id == carrera.getId()) {
                     historial.setCarrera(carrera);
-                    System.out.println("Carrera " + carrera.getNombre() + " registrada.");
+                    System.out.println("Carrera " + carrera.getNombre() + " registrada.\n");
                     acertado = true;
                     break;
                 } else {

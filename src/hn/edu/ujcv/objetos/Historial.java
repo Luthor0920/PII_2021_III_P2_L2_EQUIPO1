@@ -64,15 +64,15 @@ public class Historial implements IHistorial {
     }
     @Override
     public String toString() {
-        return "Alumno: ".concat(getAlumno().getNombre()).concat("\nCampus: ").concat(getCampus().getNombre())
+        return "Alumno(a): ".concat(getAlumno().getNombre()).concat("\nCampus: ").concat(getCampus().getNombre())
                 .concat("\nCarrera: ").concat(getCarrera().getNombre()).concat("\nPeriodo: ").concat(getPeriodo().getDescripcion())
-                .concat("\nClases: ").concat(imprimirClases()).concat("\n");
+                .concat("\n--- Clases ---\n").concat(imprimirClases()).concat("\n");
     }
 
     public String imprimirClases() {
         StringBuilder listado = new StringBuilder();
-        for (Clase item: Clases) {
-            listado.append(item.getNombre());
+        for (Clase item: this.Clases) {
+            listado.append(item.getNombre() + "\n");
         }
         return listado.toString();
     }
@@ -81,6 +81,7 @@ public class Historial implements IHistorial {
                           ListaCarreras carreras, ListaPeriodos periodos, ListaClases clases,
                           ListaHistoriales historiales) {
         String respuesta;
+        ArrayList<Clase> clases_ = new ArrayList<>();
 
         if (alumnos.validar() == true) {
             System.out.println("No puede registrar Historial.");
@@ -108,12 +109,13 @@ public class Historial implements IHistorial {
             carreras.buscarCarrera(teclado, this);
             periodos.buscarPeriodo(teclado, this);
             do {
-                clases.buscarClases(teclado, this);
+                clases.buscarClases(teclado, clases_);
 
                 System.out.print("Desea agregar otra clase? S/N ");
                 respuesta = teclado.next();
             } while (respuesta.equalsIgnoreCase("s"));
 
+            setClases(clases_);
             historiales.addHistorial(this);
         }
     }

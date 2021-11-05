@@ -23,7 +23,4 @@ public class General extends Clase{
         return String.format("%s \nAplica para Todas las Carreras: %s ", super.toString(), isTodasCarreras());
     }
 
-    public void saludar() {
-        System.out.println("hello");
-    }
 }

@@ -50,14 +50,5 @@ public class Alumno extends Persona{
         setCuenta(teclado.nextLong());
     }
 
-    public void buscar(Scanner teclado, ListaAlumnos alumnos) {
-        boolean acertado;
 
-        do {
-            acertado=false;
-
-
-
-        } while (acertado==false);
-    }
 }

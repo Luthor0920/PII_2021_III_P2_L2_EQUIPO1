@@ -3,6 +3,9 @@ package hn.edu.ujcv;
 
 import hn.edu.ujcv.objetos.*;
 
+import java.sql.DatabaseMetaData;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
@@ -19,6 +22,7 @@ public class Main {
         ListaHistoriales   listaHistoriales = new ListaHistoriales();
         ListaPeriodos         listaPeriodos = new ListaPeriodos();
         Clase                         clase = new Clase();
+
         try {
             do {
                 System.out.println("Elija una opcion.");
@@ -40,7 +44,7 @@ public class Main {
                         break;
                 }
 
-                System.out.println("Desea Seguir? S/N");
+                System.out.println("Desea volver al menu principal? S/N");
                 respuesta = teclado.next();
             } while (respuesta.equalsIgnoreCase("s"));
 
@@ -132,7 +136,7 @@ public class Main {
                 break;
             case 5:
                 System.out.println(listaClases.imprimirLista());
-                listaClases.imprimirArreglo(clase);
+                //listaClases.imprimirArreglo(clase);
                 break;
             case 6:
                 System.out.println(listaHistoriales.imprimirLista());

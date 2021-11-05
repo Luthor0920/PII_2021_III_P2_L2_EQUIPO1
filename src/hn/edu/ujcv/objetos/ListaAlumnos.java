@@ -29,7 +29,11 @@ public class ListaAlumnos {
 
     public void buscarAlumno(Scanner teclado, Historial historial) {
         boolean acertado;
+        System.out.println("--- Lista Alumnos ---");
+        System.out.println(imprimirLista());
+
         do {
+
             acertado = false;
             System.out.print("Ingrese Numero de Cuenta de Alumno: ");
             long cuenta = teclado.nextLong();
@@ -37,7 +41,7 @@ public class ListaAlumnos {
             for (Alumno alumno : ListaAlumnos) {
                 if (cuenta == alumno.getCuenta()) {
                     historial.setAlumno(alumno);
-                    System.out.println("Alumno " + alumno.getNombre() + " registrado.");
+                    System.out.println("Alumno(a) " + alumno.getNombre() + " registrado.\n");
                     acertado = true;
                     break;
                 } else {

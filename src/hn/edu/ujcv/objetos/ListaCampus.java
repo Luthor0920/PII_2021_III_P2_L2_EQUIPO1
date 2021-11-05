@@ -28,6 +28,10 @@ public class ListaCampus {
 
     public void buscarCampus(Scanner teclado, Historial historial) {
         boolean acertado;
+
+        System.out.println("--- Lista Campus ---");
+        System.out.println(imprimirLista());
+
         do {
             acertado = false;
             System.out.print("Ingrese ID de Campus: ");
@@ -36,7 +40,7 @@ public class ListaCampus {
             for (Campus campus : ListaCampus) {
                 if (id == campus.getId()) {
                     historial.setCampus(campus);
-                    System.out.println("Campus " + campus.getNombre() + " registrado.");
+                    System.out.println("Campus " + campus.getNombre() + " registrado.\n");
                     acertado = true;
                     break;
                 } else {

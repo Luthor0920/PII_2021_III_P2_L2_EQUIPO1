@@ -29,6 +29,9 @@ public class ListaPeriodos {
 
     public void buscarPeriodo(Scanner teclado, Historial historial) {
         boolean acertado;
+        System.out.println("--- Lista Periodos ---");
+        System.out.println(imprimirLista());
+
         do {
             acertado = false;
             System.out.print("Ingrese ID de Periodo: ");
@@ -37,7 +40,7 @@ public class ListaPeriodos {
             for (Periodo periodo : ListaPeriodos) {
                 if (id == periodo.getId()) {
                     historial.setPeriodo(periodo);
-                    System.out.println("Periodo " + periodo.getDescripcion() + " registrado.");
+                    System.out.println("Periodo " + periodo.getDescripcion() + " registrado.\n");
                     acertado = true;
                     break;
                 } else {

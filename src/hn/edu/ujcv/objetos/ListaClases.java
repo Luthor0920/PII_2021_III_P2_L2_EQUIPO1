@@ -37,9 +37,10 @@ public class ListaClases {
         }
     }
 
-    public void buscarClases(Scanner teclado, Historial historial) {
-        ArrayList<Clase> clases = new ArrayList<>();
+    public void buscarClases(Scanner teclado, ArrayList<Clase> clases) {
         boolean acertado;
+        System.out.println("--- Lista Clases ---");
+        System.out.println(imprimirLista());
 
         do {
             acertado = false;
@@ -49,8 +50,7 @@ public class ListaClases {
             for (Clase clase : ListaClases) {
                 if (id == clase.getId()) {
                     clases.add(clase);
-                    historial.setClases(clases);
-                    System.out.println("Clase " + clase.getNombre() + " registrada.");
+                    System.out.println("Clase " + clase.getNombre() + " registrada.\n");
                     acertado = true;
                     break;
                 } else {
