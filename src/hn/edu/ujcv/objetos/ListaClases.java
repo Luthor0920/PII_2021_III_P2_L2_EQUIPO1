@@ -54,8 +54,12 @@ public class ListaClases {
                     acertado = true;
                     break;
                 } else {
-                    System.out.println("No se encuentra una clase con ese ID.");
+                    acertado=false;
                 }
+            }
+
+            if (acertado==false) {
+                System.out.println("No se encuentra una clase con ese ID.");
             }
         } while (acertado == false);
     }
@@ -63,6 +67,11 @@ public class ListaClases {
     public boolean validar() {
         boolean vacio = ListaClases.isEmpty();
         return vacio;
+    }
+
+    public int indicarSize() {
+        int x = ListaClases.size();
+        return x;
     }
 
     public void imprimirArreglo(Clase clase) {

@@ -3,9 +3,6 @@ package hn.edu.ujcv;
 
 import hn.edu.ujcv.objetos.*;
 
-import java.sql.DatabaseMetaData;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
@@ -93,6 +90,7 @@ public class Main {
                 break;
             case 6:
                 Historial historial = new Historial();
+                System.out.println(listaClases.indicarSize());
                 historial.registrar(teclado, listaAlumnos, listaCampus, listaCarreras,
                         listaPeriodos,listaClases, listaHistoriales);
                 break;

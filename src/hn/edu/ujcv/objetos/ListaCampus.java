@@ -44,8 +44,12 @@ public class ListaCampus {
                     acertado = true;
                     break;
                 } else {
-                    System.out.println("No se encuentra un campus con ese ID.");
+                    acertado=false;
                 }
+            }
+
+            if (acertado==false) {
+                System.out.println("No se encuentra un campus con ese ID.");
             }
         } while (acertado == false);
     }

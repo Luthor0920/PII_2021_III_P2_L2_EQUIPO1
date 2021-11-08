@@ -33,7 +33,6 @@ public class ListaAlumnos {
         System.out.println(imprimirLista());
 
         do {
-
             acertado = false;
             System.out.print("Ingrese Numero de Cuenta de Alumno: ");
             long cuenta = teclado.nextLong();
@@ -45,10 +44,17 @@ public class ListaAlumnos {
                     acertado = true;
                     break;
                 } else {
-                    System.out.println("No se encuentra un alumno con ese numero de cuenta.");
+                    acertado=false;
                 }
             }
+
+            if (acertado==false) {
+                System.out.println("No se encuentra un alumno con ese numero de cuenta.");
+            }
+
         } while (acertado == false);
+
+
     }
 
     public boolean validar() {

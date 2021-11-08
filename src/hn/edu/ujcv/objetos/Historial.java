@@ -108,13 +108,17 @@ public class Historial implements IHistorial {
             campus.buscarCampus(teclado, this);
             carreras.buscarCarrera(teclado, this);
             periodos.buscarPeriodo(teclado, this);
-            do {
+            if (clases.indicarSize() > 1) {
+                do {
+                    clases.buscarClases(teclado, clases_);
+
+                    System.out.print("Desea agregar otra clase? S/N ");
+                    respuesta = teclado.next();
+                } while (respuesta.equalsIgnoreCase("s"));
+            }
+            else if (clases.indicarSize() == 1){
                 clases.buscarClases(teclado, clases_);
-
-                System.out.print("Desea agregar otra clase? S/N ");
-                respuesta = teclado.next();
-            } while (respuesta.equalsIgnoreCase("s"));
-
+            }
             setClases(clases_);
             historiales.addHistorial(this);
         }

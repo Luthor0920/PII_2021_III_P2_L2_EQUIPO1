@@ -43,8 +43,12 @@ public class ListaCarreras {
                     acertado = true;
                     break;
                 } else {
-                    System.out.println("No se encuentra una carrera con ese ID.");
+                    acertado = false;
                 }
+            }
+
+            if (acertado==false) {
+                System.out.println("No se encuentra una carrera con ese ID.");
             }
         } while (acertado == false);
     }
